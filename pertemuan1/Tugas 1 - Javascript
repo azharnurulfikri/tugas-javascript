@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas javascript pertemuan 1</title>
+  </head>
+  <body>
+    <script>
+      // menghitung luas persegi panjang
+      let panjang = 50; //variable panjang dengan nilai 50
+      let lebar = 20; // variable lebar dengan nilai 20
+      let hasil = panjang * lebar; //logika pengkalian panjang dengan lebar
+      console.log("jumlah luas persegi panjang adalah: " + hasil); //menampilkan hasil ke consol
+
+      //menghitung luas bujur sangkar
+      let sisi = 10; //sisi bujur sangkar dengan nilai 10
+      let luas = sisi * sisi; //menghitung keliling bujur sangkar
+      console.log("hasil dari luas bujur sangkar adalah: " + luas); //menampilkan hasil ke consol
+
+      //menghitung luas segitiga
+      let alas = 20; //nilai alas segitiga
+      let tinggi = 30; //nilai tinggi segitiga
+      let jumlah = alas * 0.5 * tinggi; //logika penjumlahan
+
+      console.log("hasil dari luas segitiga adalah: " + jumlah); //menampilkan hasil ke consol
+    </script>
+  </body>
+</html>
