@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Penggajian Pegawai - STT NF</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 40px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        thead {
+            background-color: #2980b9;
+            color: #ffffff;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f1f1;
+            transition: 0.3s;
+        }
+
+        tfoot {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+
+        .currency {
+            text-align: right;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Slip Gaji Pegawai</h2>
+
+        <script>
+            let nama = "Dodi Prayodi";
+            let umur = 25;
+            let jabatan = "manager";
+            let status = "menikah";
+
+            let gaji = 0;
+            if (jabatan == "manager") {
+                gaji = 15000000;
+            } else if (jabatan == "asisten_manager") {
+                gaji = 10000000;
+            } else if (jabatan == "staf") {
+                gaji = 5000000;
+            }
+
+            let tunjangan_jabatan = gaji * 0.15;
+            let bpjs = gaji * 0.1;
+            let tunjangan_keluarga = (status == "menikah") ? (gaji * 0.2) : 0;
+            let total_gaji = gaji + tunjangan_jabatan + tunjangan_keluarga + bpjs;
+
+            const formatRP = (angka) => "Rp " + angka.toLocaleString('id-ID');
+
+            document.write(`
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pegawai</th>
+                            <th>Jabatan</th>
+                            <th>Status</th>
+                            <th>Gaji Pokok</th>
+                            <th>Tunj. Jabatan</th>
+                            <th>BPJS</th>
+                            <th>Tunj. Keluarga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>${nama}</strong><br><small>${umur} Tahun</small></td>
+                            <td>${jabatan.replace('_', ' ').toUpperCase()}</td>
+                            <td>${status}</td>
+                            <td class="currency">${formatRP(gaji)}</td>
+                            <td class="currency">${formatRP(tunjangan_jabatan)}</td>
+                            <td class="currency">${formatRP(bpjs)}</td>
+                            <td class="currency">${formatRP(tunjangan_keluarga)}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" style="text-align: right;">TOTAL TERIMA (THP)</td>
+                            <td class="currency">${formatRP(total_gaji)}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            `);
+        </script>
+    </div>
+
+</body>
+</html>
