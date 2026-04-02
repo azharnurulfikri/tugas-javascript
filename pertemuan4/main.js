@@ -16,7 +16,7 @@ function tambahPelanggan(nama, telp, mobil) {
 
 function lihatDaftar() {
   if (daftarSewa.length === 0) {
-    console.log("❌ Belum ada yang sewa, Har.");
+    console.log("❌ Belum ada mobil yang disewa.");
   } else {
     console.log("\n=== DAFTAR RENTAL MOBIL AZHAR BAHAGIA SELALU DAN TERSENYUM ===");
     console.table(daftarSewa);
