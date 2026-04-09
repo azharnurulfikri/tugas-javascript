@@ -1,0 +1,9 @@
+{
+  "name": "pertemuan6",
+  "version": "1.0.0",
+  "description": "Tugas Manipulasi Data ES6 - SIB NF Academy",
+  "main": "controller.js",
+  "type": "module",
+  "author": "Azhar Nurul Fikri",
+  "license": "ISC"
+}
